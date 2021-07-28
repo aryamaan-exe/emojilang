@@ -9,8 +9,9 @@ with open(sys.argv[1], encoding="utf-8") as f:
 
 code = code.split("🥱")
 for line in code:
-    for char in line:
-        i = 0
+    i = 0
+    while i < len(line):
+        char = line[i]
         if char == "🤮":
             if line[i + 1] == "↩":
                 stack.append(value)
@@ -34,19 +35,29 @@ for line in code:
             print(value)
             func.out(str(value))
         elif char in "✌👩‍👦👩‍👧👨‍👦👨‍👧":
-            try:
-                value = func.to_int(value)
-            except:
-                print("😕❌🔢")
-            else:
-                if char == "✌":
+            if char == "✌":
+                try:
+                    value = func.to_int(value)
+                except:
+                    print("😕❌🔢")
+                else:
                     value **= 2
-                elif char in "👩‍👦👩‍👧👨‍👦👨‍👧":
+            elif char in "👩‍👦👩‍👧👨‍👦👨‍👧":
+                try:
+                    addend = func.to_int(line[i+3:line.index("👈")])
                     try:
-                        value += func.to_int(line[i+1:line.index("👈")])
-                    except ValueError:
-                        print("😕❌")
-                    except TypeError:
-                        value += line[i+1:line.index("👈")]
+                        value = func.to_int(value)
+                    except:
+                        pass
+                    if addend == "😕❌🔢":
+                        print("😕❌🔢")
+                    else:
+                        value += addend
+                except ValueError:
+                    print("😕❌👈")
+                except TypeError:
+                    value += line[i+3:line.index("👈")]
+                
+                i += 3
 
         i += 1
