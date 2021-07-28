@@ -1,0 +1,1 @@
+🤮🕕👈🧐✌🏻🤮↩😤🥱 Adds 6 to stack, pops (and reads) the stack, squares the value, pushes value to stack and prints the result.
