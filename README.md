@@ -15,7 +15,7 @@ python main.py file.em
 
 ## Tutorial
 
-(see wiki)
+[(see wiki)](https://github.com/aryamaan-exe/emojilang/wiki)
 
 ## Changelog
 
