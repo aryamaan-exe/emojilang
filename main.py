@@ -51,6 +51,7 @@ for line in code:
                         pass
                     if addend == "😕❌🔢":
                         print("😕❌🔢")
+                        
                     else:
                         value += addend
                 except ValueError:
@@ -59,5 +60,26 @@ for line in code:
                     value += line[i+3:line.index("👈")]
                 
                 i += 3
+        elif char == "✂":
+            try:
+                minuend = func.to_int(line[i+1:line.index("👈")])
+                try:
+                    value = func.to_int(value)
+                except:
+                    pass
+                if minuend == "😕❌🔢":
+                    print("😕❌🔢")
+                else:
+                    value -= minuend
+            except ValueError:
+                print("😕❌👈")
+        elif char == "🐍":
+            pycode = line[i+2:line.index("👈")]
+            if line[i+1] == "🕐":
+                stack.append(eval(pycode))
+            elif line[i+1] == "🕑":
+                stack.append(exec(pycode))
+            else:
+                print("😕🐍")
 
         i += 1
