@@ -73,6 +73,62 @@ for line in code:
                     value -= minuend
             except ValueError:
                 print("😕❌👈")
+        elif char == "🐰":
+            try:
+                num = func.to_int(line[i+1:line.index("👈")])
+                try:
+                    value = func.to_int(value)
+                except:
+                    pass
+                    
+                if num == "😕❌🔢":
+                    print("😕❌🔢")
+                else:
+                    value *= num
+            except ValueError:
+                print("😕❌👈")
+        elif char == "➗":
+            try:
+                divisor = func.to_int(line[i+1:line.index("👈")])
+                try:
+                    value = func.to_int(value)
+                except:
+                    pass
+                    
+                if divisor == "😕❌🔢":
+                    print("😕❌🔢")
+                else:
+                    value /= divisor
+            except ValueError:
+                print("😕❌👈")
+        elif char == "🐇":
+            try:
+                exponent = func.to_int(line[i+1:line.index("👈")])
+                try:
+                    value = func.to_int(value)
+                except:
+                    pass
+                    
+                if exponent == "😕❌🔢":
+                    print("😕❌🔢")
+                else:
+                    value **= exponent
+            except ValueError:
+                print("😕❌👈")
+        elif char == "🐕":
+            try:
+                num = func.to_int(line[i+1:line.index("👈")])
+                try:
+                    value = func.to_int(value)
+                except:
+                    pass
+                    
+                if num == "😕❌🔢":
+                    print("😕❌🔢")
+                else:
+                    value %= num
+            except ValueError:
+                print("😕❌👈")
         elif char == "🐍":
             pycode = line[i+2:line.index("👈")]
             if line[i+1] == "🕐":
