@@ -23,4 +23,5 @@ v1.1-
 Arithmetic operators: +, -, \*, /, %, \*\*, \*\* 2  
 Comparison operators: >, >=, <, <=, ==, !=  
 Logical operators: not !, and &&, or ||  
+Eval, exec Python code  
 v1.0- Initial version
