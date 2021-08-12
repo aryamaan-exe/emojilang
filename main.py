@@ -26,15 +26,12 @@ for line in code:
                     stack.append(res)
                 except:
                     print("😕❌👈")
-
-            
-
         elif char == "🧐":
             value = stack.pop()
         elif char == "😤":
             print(value)
             func.out(str(value))
-        elif char in "✌👩‍👦👩‍👧👨‍👦👨‍👧":
+        elif char in "✌➕":
             if char == "✌":
                 try:
                     value = func.to_int(value)
@@ -42,24 +39,22 @@ for line in code:
                     print("😕❌🔢")
                 else:
                     value **= 2
-            elif char in "👩‍👦👩‍👧👨‍👦👨‍👧":
+            elif char == "➕":
                 try:
-                    addend = func.to_int(line[i+3:line.index("👈")])
+                    addend = func.to_int(line[i+1:line.index("👈")])
                     try:
                         value = func.to_int(value)
                     except:
                         pass
+
                     if addend == "😕❌🔢":
                         print("😕❌🔢")
-                        
                     else:
                         value += addend
                 except ValueError:
                     print("😕❌👈")
                 except TypeError:
-                    value += line[i+3:line.index("👈")]
-                
-                i += 3
+                    value += line[i+1:line.index("👈")]
         elif char == "✂":
             try:
                 minuend = func.to_int(line[i+1:line.index("👈")])
@@ -151,6 +146,84 @@ for line in code:
                     value = True if char == "♊" else False
                 else:
                     value = False if char == "♊" else True
+        elif char in "👨👩":
+            if line[i+1] == "⚖":
+                try:
+                    rhs = func.to_int(line[i+2:line.index("👈")])
+                except ValueError:
+                    print("😕❌👈")
+                else:
+                    if rhs == "😕❌🔢":
+                        rhs = line[i+2:line.index("👈")]
+                    
+                    temp = value
+                    try:
+                        value = func.to_int(value)
+                    except:
+                        pass
+                    
+                    if value == "😕❌🔢":
+                        value = temp
+                    
+                    value = True if value > rhs else (True if value == rhs else False)
+            else:
+                try:
+                    rhs = func.to_int(line[i+1:line.index("👈")])
+                except ValueError:
+                    print("😕❌👈")
+                else:
+                    if rhs == "😕❌🔢":
+                        rhs = line[i+1:line.index("👈")]
+                    
+                    temp = value
+                    try:
+                        value = func.to_int(value)
+                    except:
+                        pass
+                    
+                    if value == "😕❌🔢":
+                        value = temp
+                    
+                    value = True if value > rhs else False
+        elif char in "👦👧":
+            if line[i+1] == "⚖":
+                try:
+                    rhs = func.to_int(line[i+2:line.index("👈")])
+                except ValueError:
+                    print("😕❌👈")
+                else:
+                    if rhs == "😕❌🔢":
+                        rhs = line[i+2:line.index("👈")]
+                    
+                    temp = value
+                    try:
+                        value = func.to_int(value)
+                    except:
+                        pass
+                    
+                    if value == "😕❌🔢":
+                        value = temp
+                    
+                    value = True if value > rhs else (True if value == rhs else False)
+            else:
+                try:
+                    rhs = func.to_int(line[i+1:line.index("👈")])
+                except ValueError:
+                    print("😕❌👈")
+                else:
+                    if rhs == "😕❌🔢":
+                        rhs = line[i+1:line.index("👈")]
+                    
+                    temp = value
+                    try:
+                        value = func.to_int(value)
+                    except:
+                        pass
+                    
+                    if value == "😕❌🔢":
+                        value = temp
+                    
+                    value = True if value < rhs else False
         elif char == "🐍":
             pycode = line[i+2:line.index("👈")]
             if line[i+1] == "🕐":
