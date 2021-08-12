@@ -224,6 +224,12 @@ for line in code:
                         value = temp
                     
                     value = True if value < rhs else False
+        elif char == "🤙":
+            value = value and line[i+1:line.index("👈")]
+        elif char == "🤛":
+            value = value or line[i+1:line.index("👈")]
+        elif char == "👊":
+            value = not value
         elif char == "🐍":
             pycode = line[i+2:line.index("👈")]
             if line[i+1] == "🕐":
