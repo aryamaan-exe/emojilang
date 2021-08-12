@@ -129,6 +129,28 @@ for line in code:
                     value %= num
             except ValueError:
                 print("😕❌👈")
+        elif char == "♊":
+            try:
+                rhs = func.to_int(line[i+1:line.index("👈")])
+            except ValueError:
+                print("😕❌👈")
+            else:
+                if rhs == "😕❌🔢":
+                    rhs = line[i+1:line.index("👈")]
+                
+                temp = value
+                try:
+                    value = func.to_int(value)
+                except:
+                    pass
+                
+                if value == "😕❌🔢":
+                    value = temp
+                
+                if value == rhs:
+                    value = True
+                else:
+                    value = False
         elif char == "🐍":
             pycode = line[i+2:line.index("👈")]
             if line[i+1] == "🕐":
