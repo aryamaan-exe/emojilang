@@ -19,4 +19,8 @@ python main.py file.em
 
 ## Changelog
 
+v1.1- 
+Arithmetic operators: +, -, \*, /, %, \*\*, \*\* 2  
+Comparison operators: >, >=, <, <=, ==, !=  
+Logical operators: not !, and &&, or ||  
 v1.0- Initial version
